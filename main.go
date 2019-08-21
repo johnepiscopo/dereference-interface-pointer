@@ -9,7 +9,7 @@ func main() {
 	var dog dog
 
 	//Pass in reference to dog
-	err := do("Rover", &dog)
+	err := Get("Rover", &dog)
 	if err != nil {
 		fmt.Println(err.Error())
 		return
@@ -18,9 +18,9 @@ func main() {
 	return
 }
 
-//do takes an name and an interface{} to populate if found and
+//Get takes an name and an interface{} to populate if found and
 //returns an error if nothing is found
-func do(name string, entity interface{}) error {
+func Get(name string, entity interface{}) error {
 	m := map[string]dog{
 		"Rover": dog{Name: "Rover"},
 	}
